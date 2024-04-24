@@ -21,7 +21,7 @@ export default function App() {
         actorSysI: rootActorSystem,
       }}
     >
-      <App />
+      <p>App</p>
     </AppContextProvider>
   );
 }
