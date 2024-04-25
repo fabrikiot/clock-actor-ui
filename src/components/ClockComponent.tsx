@@ -20,5 +20,5 @@ export const ClockComponent = () => {
         );
     }, [])
 
-    return <div>{time}</div>
+    return <h1>{time}</h1>
 }
