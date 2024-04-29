@@ -12,7 +12,7 @@ export const RandomNumber = () => {
     DataActorRef.current.subscribe(
       DataActor.TOPICS.RANDOM_NUMBERS,
       (res: any, randomNumbersArr: any) => {
-        console.log(randomNumbersArr);
+        console.log(randomNumbersArr, res);
         setRandomNumbers([]);
         setRandomNumbers(randomNumbersArr);
       }

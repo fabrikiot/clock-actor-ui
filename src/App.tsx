@@ -1,17 +1,18 @@
-import { ACTOR_ADDRESS } from "./actors/actor-address";
 import { ActorSystem, WidgetAddressResolver } from "actor-system";
+import { ACTOR_ADDRESS } from "./actors/actor-address";
 import ClockActor from "./actors/clock-actor";
-import { AppContextProvider } from "./context";
-import { useEffect } from "react";
-import { ClockComponent } from "./components/ClockComponent";
-import { RandomNumber } from "./components/RandomNumber";
 import DataActor from "./actors/data-actor";
 import GetRandomNumbersActor from "./actors/get-random-numbers-actor";
+import { ClockComponent } from "./components/ClockComponent";
+import { AppContextProvider } from "./context";
 
 const actorSystem = new ActorSystem(false);
 // Root Actor System
 const rootResolver = new WidgetAddressResolver();
-export const rootActorSystem = actorSystem.getChildActorSystem("root", rootResolver);
+export const rootActorSystem = actorSystem.getChildActorSystem(
+  "root",
+  rootResolver
+);
 
 // Token Actor
 rootActorSystem.register(
@@ -37,7 +38,7 @@ export default function App() {
       }}
     >
       <ClockComponent />
-      <RandomNumber/>
+      {/* <RandomNumber /> */}
     </AppContextProvider>
   );
 }
